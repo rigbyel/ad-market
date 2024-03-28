@@ -1,0 +1,8 @@
+env: "local"    
+storage_path: "./storage/storage.db"
+http_server:
+  address: "0.0.0.0:8082"
+  read_timeout: 3s  
+  write_timeout: 3s  
+  token_tl: 5h
+jwt_secret: "ultrasecuresecret"

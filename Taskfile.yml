@@ -1,0 +1,14 @@
+version: '3'
+
+tasks:      
+  build:
+    cmds: 
+      - go mod download
+      - task: migrate-storage
+      - go build -o ad-market ./cmd/ad-market/main.go
+  
+  migrate-storage:
+    cmds:
+      - go run ./cmd/migrator --storage-path=./storage/storage.db --migrations-path=./migrations
+  
+    
